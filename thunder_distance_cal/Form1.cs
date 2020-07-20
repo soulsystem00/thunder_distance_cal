@@ -38,6 +38,8 @@ namespace thunder_distance_cal
             thread = new Thread(counter);
             Stopwatch.Start();
             thread.Start();
+            btn_start.Visible = false;
+            btn_end.Visible = true;
         }
 
         private void btn_end_Click(object sender, EventArgs e)
@@ -50,7 +52,8 @@ namespace thunder_distance_cal
             txt_sec.Text = sec.ToString("F2");
             double distance = 340 * sec;
             txt_dis.Text = distance.ToString("F2");
-
+            btn_start.Visible = true;
+            btn_end.Visible = false;
         }
     }
 }
